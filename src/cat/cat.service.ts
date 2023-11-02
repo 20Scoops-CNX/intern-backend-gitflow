@@ -12,6 +12,12 @@ export class CatService {
       age: '5',
       breed: 'บ้าน',
     },
+    {
+      id: '2',
+      name: 'nami',
+      age: '4',
+      breed: 'อเมริกัน ชอร์ตแฮร์',
+    }
   ];
 
   getAllCats(): Cat[] {
