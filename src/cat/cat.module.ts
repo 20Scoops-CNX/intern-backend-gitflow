@@ -1,13 +1,12 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { MongooseModule } from '@nestjs/mongoose';
+import { Cat, CatSchema } from './cat.schema';
+import { CatsService } from './cat.service';
 import { CatController } from './cat.controller';
-import { CatService } from './cat.service';
-
 @Module({
+  imports: [MongooseModule.forFeature([{ name: Cat.name, schema: CatSchema }])],
+  providers: [CatsService],
   controllers: [CatController],
-  providers: [CatService],
 })
-export class CatModule {
-  constructor(private catsService: CatService) {}
-}
+export class CatModule {}
