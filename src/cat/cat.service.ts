@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Cat } from './cat.model';
+import { Cat } from './cat.schema';
 
 @Injectable()
 export class CatService {

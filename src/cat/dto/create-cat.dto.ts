@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 export class CreateCatDto {
     name: string;
-    age: number;
+    age: string;
     breed: string;
   }

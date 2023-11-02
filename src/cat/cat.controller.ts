@@ -2,7 +2,7 @@
 import { Controller, Get, Post, Patch, Delete, Param } from '@nestjs/common';
 import { CatService } from './cat.service';
 
-@Controller('cat')
+@Controller('Cat')
 export class CatController {
   constructor(private readonly catService: CatService) {}
 
@@ -13,8 +13,8 @@ export class CatController {
 
   @Get()
   findAll(): any {
-    const cats = this.catService.getAllCats();
-    return cats;
+    const Cats = this.catService.getAllCats();
+    return Cats;
   }
 
   @Patch(':id')
