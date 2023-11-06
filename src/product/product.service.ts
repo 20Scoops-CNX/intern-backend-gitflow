@@ -8,8 +8,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 @Injectable()
 export class ProductService {
     constructor (@InjectModel(Product.name) private productModel: Model<Product>) {}
-
-
+    
     async create(createProductDto: CreateProductDto):Promise<Product>{
         const createProduct = new this.productModel(createProductDto);
         return createProduct.save();
