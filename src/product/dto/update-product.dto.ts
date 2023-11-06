@@ -1,5 +1,4 @@
-export class CreateProductDto{
-    productName: string;
+export class UpdateProductDto{
     spec:string;
     description: string;
     productPrice: number;

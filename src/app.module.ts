@@ -1,19 +1,27 @@
-/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { ProductService } from './product/product.service';
-import { ProductController } from './product/product.controller';
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { MongooseModule } from '@nestjs/mongoose';
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 import { ProductModule } from './product/product.module';
-import { CatController } from './cat/cat.controller';
-import { CatService } from './cat/cat.service';
-import { CatModule } from './cat/cat.module';
 
 @Module({
   imports: [
-    ProductModule,
-    CatModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (config: ConfigService) => ({
+        uri: config.get<string>('MONGODB_URI'),
+      })
+    }),
+    ProductModule
   ],
-  providers: [ProductService, CatService],
-  controllers: [ProductController, CatController],
-   
+  controllers: [AppController],
+  providers: [AppService],
+
 })
 export class AppModule {}
