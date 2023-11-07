@@ -1,10 +1,13 @@
+/* eslint-disable prettier/prettier */
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { Product } from './product.schema';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { ApiTags} from '@nestjs/swagger';
 
-@Controller('product')
+@ApiTags('Product')
+@Controller('Product')
 export class ProductController {
     constructor(private readonly productService:ProductService) {}
 

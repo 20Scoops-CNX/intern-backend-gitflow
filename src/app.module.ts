@@ -5,8 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { CatModule } from './cat/cat.module';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import { ProductService } from './product/product.service';
-import { ProductController } from './product/product.controller';
+
 import { ProductModule } from './product/product.module';
 
 @Module({
@@ -25,7 +24,7 @@ import { ProductModule } from './product/product.module';
   CatModule,
   ProductModule
   ],
-  controllers:[AppController, ProductController],
-  providers: [AppService, ProductService]
+  controllers:[AppController],
+  providers: [AppService]
 })
 export class AppModule {}

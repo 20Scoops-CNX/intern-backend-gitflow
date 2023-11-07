@@ -10,31 +10,28 @@ import { UpdatecatDto } from './dto/update-cat.dto';
 export class CatsService {
   constructor(
     @InjectModel(Cat.name)
-    private catModel: Model<Cat>
+    private catModel: Model<Cat>,
   ) {}
-
 
   async create(createCatDto: CreateCatDto): Promise<Cat> {
     const createdCat = new this.catModel(createCatDto);
-    return  createdCat.save();
+    return createdCat.save();
   }
 
   async findAll(): Promise<Cat[]> {
     return this.catModel.find().exec();
-
   }
-  
+
+  async findOne(id: string): Promise<Cat> {
+    return this.catModel.findById(id).exec();
+  }
+
   async delete(id: string): Promise<void> {
     await this.catModel.findByIdAndRemove(id);
-
-  }async update(
-    id: string,
-    updatecatmentDto: UpdatecatDto,
-    ): Promise<Cat>{
+  }
+  async update(id: string, updatecatmentDto: UpdatecatDto): Promise<Cat> {
     return this.catModel.findByIdAndUpdate(id, updatecatmentDto, {
       new: true,
-      })
-  };
-  
-
-};
+    });
+  }
+}
