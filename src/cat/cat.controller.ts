@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Controller, Get, Post, Patch, Delete, Param, Body } from '@nestjs/common';
 import { CatsService } from './cat.service';
 import { Cat } from './cat.schema';

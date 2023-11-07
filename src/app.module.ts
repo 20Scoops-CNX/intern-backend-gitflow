@@ -1,13 +1,27 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
-import { CatModule } from './cat/cat.module';
+import { ConfigModule, ConfigService } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose';
+import { CatModule } from './cat/cat.module';
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://admin:admin@cluster0.vqbvued.mongodb.net/Test_input'),
-    CatModule,
+    ConfigModule.forRoot({
+      isGlobal :true,
+      envFilePath:'.env',
+    }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (config: ConfigService) => ({
+        uri: config.get<string>('MONGODB_URI'),     
+    })
+  }),
+  CatModule
   ],
+  controllers:[AppController],
+  providers: [AppService]
 })
 export class AppModule {}
