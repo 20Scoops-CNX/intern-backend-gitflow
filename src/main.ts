@@ -8,7 +8,6 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Backend API')
     .setVersion('1.0')
-    .addTag('Cat')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
