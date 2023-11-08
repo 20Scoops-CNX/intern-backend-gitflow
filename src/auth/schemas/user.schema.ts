@@ -6,13 +6,13 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 })
 export class User {
     @Prop()
-    name: string
+    name: string;
 
-    @Prop({ unique: [ true, 'Duplicate username entered']})
-    username: string
+    @Prop({ unique:  true, message: 'User duplication error'})
+    username: string;
 
     @Prop()
-    password: string
+    password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)
