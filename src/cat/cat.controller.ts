@@ -14,7 +14,9 @@ import { Cat } from './cat.schema';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdatecatDto } from './dto/update-cat.dto';
 import { ApiBody, ApiCreatedResponse, ApiOkResponse } from '@nestjs/swagger';
+import { ApiTags} from '@nestjs/swagger';
 
+@ApiTags('Cat')
 @Controller('Cat')
 export class CatController {
   constructor(private readonly catsService: CatsService) {}
