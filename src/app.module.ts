@@ -25,7 +25,7 @@ import { ProductModule } from './product/product.module';
   CatModule,
   ProductModule
   ],
-  controllers:[AppController, ProductController],
-  providers: [AppService, ProductService]
+  controllers:[AppController],
+  providers: [AppService]
 })
 export class AppModule {}
