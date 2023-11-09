@@ -26,4 +26,12 @@ export class CreateCatDto {
   @ApiProperty({ type : String, description : 'history'})
   @IsString()
   history: string;
+
+  @ApiProperty({ type : String, description : 'Country'})
+  @IsString()
+  country: string;
+
+  @ApiProperty({ type : String, description : 'Farm'})
+  @IsString()
+  farm: string;
 }
