@@ -14,4 +14,16 @@ export class CreateCatDto {
   @ApiProperty({ type: String, description: 'breed' })
   @IsString()
   breed: string;
+
+  @ApiProperty({ type : String, description : 'Gender'})
+  @IsString()
+  Gender: string;
+
+  @ApiProperty({ type : String, description :  'Vaccine'})
+  @IsString()
+  vaccine: string;
+
+  @ApiProperty({ type : String, description : 'history'})
+  @IsString()
+  history: string;
 }
