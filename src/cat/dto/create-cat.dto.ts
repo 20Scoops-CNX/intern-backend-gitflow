@@ -34,4 +34,12 @@ export class CreateCatDto {
   @ApiProperty({ type : String, description : 'Farm'})
   @IsString()
   farm: string;
+  
+  @ApiProperty({ type : Number, description : 'price'})
+  @IsString()
+  price: number;
+
+  @ApiProperty({ type : Number, description : 'Weight'})
+  @IsString()
+  Weight: number;
 }
