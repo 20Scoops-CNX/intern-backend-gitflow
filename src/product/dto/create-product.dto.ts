@@ -18,4 +18,12 @@ export class CreateProductDto{
     @ApiProperty({ type: String, description: 'Product price' })
     @IsNumber()
     productPrice: number;
+    
+    @ApiProperty ({ type : String, description :'Product Type '})
+    @IsString()
+    ProductType: string;
+
+    @ApiProperty({  type : Number, description : 'product  Amount'})
+    @IsNumber()
+    productAmount: number; 
 }
