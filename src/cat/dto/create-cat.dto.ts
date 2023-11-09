@@ -1,29 +1,37 @@
 /* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator'
+import { IsNumber, IsString } from 'class-validator';
 
 export class CreateCatDto {
   @ApiProperty({ type: String, description: 'name' })
   @IsString()
   name: string;
 
-  @ApiProperty({ type: String, description: 'age' })
+  @ApiProperty({ type: Number, description: 'age' })
   @IsString()
-  age: string;
+  age: number;
 
   @ApiProperty({ type: String, description: 'breed' })
   @IsString()
   breed: string;
 
-  @ApiProperty({ type : String, description : 'Gender'})
+  @ApiProperty({ type: String, description: 'Gender' })
   @IsString()
   Gender: string;
 
-  @ApiProperty({ type : String, description :  'Vaccine'})
+  @ApiProperty({ type: String, description: 'Vaccine' })
   @IsString()
   vaccine: string;
 
-  @ApiProperty({ type : String, description : 'history'})
+  @ApiProperty({ type: String, description: 'history' })
   @IsString()
   history: string;
+
+  @ApiProperty({ type: Number, description: 'Price' })
+  @IsNumber()
+  Price: number;
+
+  @ApiProperty({ type: Number, description: 'Weight' })
+  @IsNumber()
+  Weight: number;
 }

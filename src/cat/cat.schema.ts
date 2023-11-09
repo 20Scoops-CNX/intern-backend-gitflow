@@ -12,16 +12,31 @@ export class Cat {
     description: 'The name of the cat',
     example: 'na mi',
   })
-  article: CreateCatDto
+  article: CreateCatDto;
 
   @Prop()
   name: string;
 
   @Prop()
-  age: string;
+  age: number;
 
   @Prop()
   breed: string;
+
+  @Prop()
+  Gender: string;
+
+  @Prop()
+  vaccine: string;
+
+  @Prop()
+  history: string;
+
+  @Prop()
+  Price: number;
+
+  @Prop()
+  Weight: number;
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);
