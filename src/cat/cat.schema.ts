@@ -22,6 +22,12 @@ export class Cat {
 
   @Prop()
   breed: string;
+
+  @Prop()
+  country:string;
+
+  @Prop()
+  farm:string;
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);
