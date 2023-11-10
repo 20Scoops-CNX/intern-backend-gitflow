@@ -19,7 +19,6 @@ export class ProductController {
     @Get('find')
    async findAll(): Promise<Product[]> {
         return this.productService.findAllProducts();
-
     }
 
     @Patch('edit/:id')
